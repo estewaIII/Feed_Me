@@ -9,13 +9,15 @@ public class Store {
     private String streetAddress;
     private String State;
     private Integer zip;
+    private String phoneNumber;
     private StoreStatus storeStatus;
 
-    public Store(Integer operatingManager, String streetAddress, String state, Integer zip) {
+    public Store(Integer operatingManager, String streetAddress, String state, Integer zip, String phoneNumber) {
         this.operatingManager = operatingManager;
         this.streetAddress = streetAddress;
-        this.State = state;
+        State = state;
         this.zip = zip;
+        this.phoneNumber = phoneNumber;
     }
 
     public Store(Integer operatingManager, String streetAddress, String state, Integer zip, StoreStatus storeStatus) {
@@ -32,6 +34,16 @@ public class Store {
         this.streetAddress = streetAddress;
         this.State = state;
         this.zip = zip;
+        this.storeStatus = storeStatus;
+    }
+
+    public Store(Integer id, Integer operatingManager, String streetAddress, String state, Integer zip, String phoneNumber, StoreStatus storeStatus) {
+        this.id = id;
+        this.operatingManager = operatingManager;
+        this.streetAddress = streetAddress;
+        State = state;
+        this.zip = zip;
+        this.phoneNumber = phoneNumber;
         this.storeStatus = storeStatus;
     }
 
@@ -83,6 +95,14 @@ public class Store {
         this.storeStatus = storeStatus;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -93,12 +113,13 @@ public class Store {
                 Objects.equals(streetAddress, store.streetAddress) &&
                 Objects.equals(State, store.State) &&
                 Objects.equals(zip, store.zip) &&
+                Objects.equals(phoneNumber, store.phoneNumber) &&
                 storeStatus == store.storeStatus;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, operatingManager, streetAddress, State, zip, storeStatus);
+        return Objects.hash(id, operatingManager, streetAddress, State, zip, phoneNumber, storeStatus);
     }
 
     @Override
@@ -109,6 +130,7 @@ public class Store {
                 ", streetAddress='" + streetAddress + '\'' +
                 ", State='" + State + '\'' +
                 ", zip=" + zip +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", storeStatus=" + storeStatus +
                 '}';
     }
