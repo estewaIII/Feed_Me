@@ -1,31 +1,33 @@
 package com.FeedMe.repositories;
 
-import com.FeedMe.models.User;
+import com.FeedMe.models.Store;
 
 import java.util.Optional;
 import java.util.Set;
 
-public class UserRepository implements CrudRepository<User> {
+public class StoreRepository implements CrudRepository<Store> {
+
+
 
 
 
     @Override
-    public void save(User newObj) {
+    public void save(Store newObj) {
 
     }
 
     @Override
-    public Set<User> findAll() {
+    public Set<Store> findAll() {
         return null;
     }
 
     @Override
-    public Optional<User> findById(Integer id) {
+    public Optional<Store> findById(Integer id) {
         return Optional.empty();
     }
 
     @Override
-    public Boolean update(User updatedObj) {
+    public Boolean update(Store updatedObj) {
         return null;
     }
 

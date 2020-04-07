@@ -6,8 +6,10 @@ public class Item {
     private Integer id;
     private String Description;
     private Double cost;
+    private String itemImage;
     private ItemCategory itemCategory;
     private ItemStatus itemStatus;
+
 
     public Item(){super();}
 
@@ -16,10 +18,25 @@ public class Item {
         this.cost = cost;
     }
 
+    public Item(String description, Double cost, String itemImage) {
+        Description = description;
+        this.cost = cost;
+        this.itemImage = itemImage;
+    }
+
     public Item(Integer id, String description, Double cost, ItemCategory itemCategory, ItemStatus itemStatus) {
         this.id = id;
         Description = description;
         this.cost = cost;
+        this.itemCategory = itemCategory;
+        this.itemStatus = itemStatus;
+    }
+
+    public Item(Integer id, String description, Double cost, String itemImage, ItemCategory itemCategory, ItemStatus itemStatus) {
+        this.id = id;
+        Description = description;
+        this.cost = cost;
+        this.itemImage = itemImage;
         this.itemCategory = itemCategory;
         this.itemStatus = itemStatus;
     }
@@ -61,6 +78,14 @@ public class Item {
         this.cost = cost;
     }
 
+    public String getItemImage() {
+        return itemImage;
+    }
+
+    public void setItemImage(String itemImage) {
+        this.itemImage = itemImage;
+    }
+
     public ItemCategory getItemCategory() {
         return itemCategory;
     }
@@ -85,13 +110,14 @@ public class Item {
         return Objects.equals(id, item.id) &&
                 Objects.equals(Description, item.Description) &&
                 Objects.equals(cost, item.cost) &&
+                Objects.equals(itemImage, item.itemImage) &&
                 itemCategory == item.itemCategory &&
                 itemStatus == item.itemStatus;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, Description, cost, itemCategory, itemStatus);
+        return Objects.hash(id, Description, cost, itemImage, itemCategory, itemStatus);
     }
 
     @Override
@@ -100,6 +126,7 @@ public class Item {
                 "id=" + id +
                 ", Description='" + Description + '\'' +
                 ", cost=" + cost +
+                ", itemImage='" + itemImage + '\'' +
                 ", itemCategory=" + itemCategory +
                 ", itemStatus=" + itemStatus +
                 '}';
