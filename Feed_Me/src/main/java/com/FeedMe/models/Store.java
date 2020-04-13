@@ -12,6 +12,10 @@ public class Store {
     private String phoneNumber;
     private StoreStatus storeStatus;
 
+    public Store(){
+        super();
+    }
+
     public Store(Integer operatingManager, String streetAddress, String state, Integer zip, String phoneNumber) {
         this.operatingManager = operatingManager;
         this.streetAddress = streetAddress;
